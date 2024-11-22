@@ -240,10 +240,11 @@ def rotate_tensors(rotation_matrix, tensors):
     if n_dim == 2:
         tensors = [tensors]
     
-    inv_rotation_matrix = np.linalg.inv(rotation_matrix)
+    #inv_rotation_matrix = np.linalg.inv(rotation_matrix)
     
     tensors = [
-        np.matmul(rotation_matrix, np.matmul(tensor, rotation_matrix))
+        #np.matmul(rotation_matrix, np.matmul(tensor, rotation_matrix))
+        np.matmul(rotation_matrix, np.matmul(tensor, rotation_matrix.T))
             for tensor in tensors
         ]
 
